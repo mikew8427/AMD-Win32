@@ -1,0 +1,5 @@
+TARGETNAME=amdfdrv
+TARGETPATH=D:\ntddk\lib
+TARGETTYPE=DRIVER
+
+SOURCES=amdfdrv.c

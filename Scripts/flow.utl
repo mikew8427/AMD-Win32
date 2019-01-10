@@ -1,0 +1,32 @@
+//
+// Test the Local_Variable Functions
+//
+
+	Local_Define(Buffer,24)				// Explicit Definition
+	STRING_Copy(Buffer,My Computer Name is.:)	// Place some data here
+	Comp=Get_ComputerName()				// Defined by first usage
+	Message(<Buffer> <Comp>)			// Display a Message
+	Call(MyProc,Buffer,Comp)			// Call a Prcedure
+	Message(<Buffer> <Comp>)			// Display same old message
+	if (2 == 1) then Message( New Math Two equals One )
+	else Message( Two never equals One )		// Should See this Message
+	end						// Must provide and End
+	if (2 == 1) then do
+		Message( Two is Equal to One )
+	else do
+		Message( Two still not equal to One ) 	// Should See this Message
+	end						// Must provide and End
+	if (1 == 1) then goto skip1			// Should always be true
+	end						// Must provide an End Here also
+	Message(This Message should not appear)
+:Skip1
+	Message(We are at Skip 1)
+	While(String_Len(<Comp>) > 0)
+		Message(Inside While Loop)
+		Local_Drop(Comp)
+	End
+Proc:MyProc
+	String_Copy(Buffer,New Display Info....:)	// Variable updated
+	Message(<Buffer> <Comp>)			// Display Message
+	Local_Drop(Buffer)				// Droped
+EndP

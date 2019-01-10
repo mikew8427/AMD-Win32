@@ -1,0 +1,63 @@
+//
+// Install for the AMD Admin
+//	
+	FreeC=Get_FreeSpace(C:\);			// Get the free space on C
+	if(<FreeC> < 3000000) then do			// Check For 3M
+		LogMsg(Unable to Install AMD due to a lack of Disk Space [<FreeC>]);
+		ExitProcess(16);
+	end
+	String_Copy(InstDir,C:\AMD);			// Set the Install Directory
+	String_Copy(BaseDir,C:\AMD_NT);			// Base Dir for Install
+	Create_Dir(<InstDir>);				// Build the Base Dir
+	String_Copy(Source,<BaseDir>\Admin);		// Set the Source Directory
+	LstFile=BuildFileName(Source,ADMINFILES.LST);	// Build File List Name
+	FH1=File_Open(<LstFile>,r,TEXT);		// Open FIle as Text
+	if(FH1 == 8) then do
+		Message(Unable to Open List File);
+		exitprocess(8);
+	end
+	//
+	// Now Read In the entire File and Copy over the Modules
+	//
+	While(File_Read(FH1,LstBuf,128) > 0)
+		pos=String_Find(LstBuf,;);		// Find the Semi Colon
+		String_Substr(Fname,LstBuf,1,SUB(<pos>,1));	// Copy in First part	
+		String_Substr(Tname,lstbuf,ADD(<pos>,1),0);	// Last part please
+		From=BuildFileName(<Source>,<Fname>);	// build File name Please
+		Message(From name is <From>)
+		To  =BuildFileName(<InstDir>,<Tname>);	// Build Output File Name
+		Message(To Name is <to>)
+		LogMsg(Copy of <to> Completed");	
+		Local_Drop(Tname);			// Substr will not overlay old data
+		Local_Drop(Fname);			// So remove these guys each time
+		exitprocess(8)
+	End
+	//
+	// Install the NT TCP/IP Service
+	//
+	Create32(<instdir>\AMDSRVLS -INSTALL,SW_HIDE,WAIT,<InstDir>);	// Execute it please
+	Create32(<instdir>\AMDSRVLS -START,SW_HIDE,WAIT,<InstDir>);	// Execute it please
+	//
+	// Now Generate the Links
+	//
+	WinDir=Get_WindowsDir();
+	Create_Dir(<WinDir>\Profiles\All Users\Start Menu\Programs\AMD System);
+	f0=BuildFileName(WinDir,\Profiles\All Users\Start Menu\Programs\AMD System\AMD Scheduler.lnk)
+	CreateLink(f0,<instdir>\AMDSCHED.EXE,AMD Viewer,<InstDir>, ,1);
+	f1=BuildFileName(WinDir,\Profiles\All Users\Start Menu\Programs\AMD System\AMD File Display.lnk)
+	CreateLink(f1,<instdir>\AMDDSPLY.EXE,AMD Viewer,<InstDir>, ,1);
+	f2=BuildFileName(WinDir,\Profiles\All Users\Start Menu\Programs\AMD System\AMD Report Viewer.lnk)
+	CreateLink(f2,<instdir>\AMDRVIEW.EXE,AMD Report Viewer,<InstDir>, ,1);
+	f3=BuildFileName(WinDir,\Profiles\All Users\Start Menu\Programs\AMD System\NT File Security.lnk)
+	CreateLink(f3,<instdir>\AMDSPROF.EXE,AMD NT File System Profile,<InstDir>, ,1);
+	f4=BuildFileName(WinDir,\Profiles\All Users\Start Menu\Programs\AMD System\NT Registry Security.lnk)
+	CreateLink(f4,<instdir>\AMDSREGD.EXE,AMD NT Registry Profile,<InstDir>, ,1);
+	f5=BuildFileName(WinDir,\Profiles\All Users\Start Menu\Programs\AMD System\AMD File System Profiler.lnk)
+	CreateLink(f5,<instdir>\AMDFBLD.EXE,AMD NT File System Profile,<InstDir>, ,1);
+	f6=BuildFileName(WinDir,\Profiles\All Users\Start Menu\Programs\AMD System\AMD Stream Editor.lnk)
+	CreateLink(f6,<instdir>\AMDSTMED.EXE,AMD Stream Editor,<InstDir>, ,1);
+
+
+
+
+

@@ -1,0 +1,35 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: AMDIO - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP1D.tmp" with contents
+[
+/nologo /MT /W3 /GX /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /Fp".\Release/AMDIO.pch" /YX /Fo".\Release/" /Fd".\Release/" /FD /c 
+"D:\AMD_BASE\AMDIO\Amdio.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP1D.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP1E.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /incremental:no /pdb:".\Release/amdio.pdb" /machine:I386 /def:".\amdio.def" /out:"c:\test\amdio.dll" /implib:".\Release/amdio.lib" 
+.\Release\Amdio.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP1E.tmp"
+<h3>Output Window</h3>
+Compiling...
+Amdio.c
+Linking...
+.\amdio.def : warning LNK4017: CODE statement not supported for the target platform; ignored
+.\amdio.def : warning LNK4017: DATA statement not supported for the target platform; ignored
+   Creating library .\Release/amdio.lib and object .\Release/amdio.exp
+
+
+
+<h3>Results</h3>
+amdio.dll - 0 error(s), 2 warning(s)
+</pre>
+</body>
+</html>

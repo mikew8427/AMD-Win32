@@ -1,0 +1,11 @@
+//
+//  Test the INI routines
+//
+
+	INI_SetValue(Section,Key1,C:\Test\test.ini,Data for Key1)
+	INI_SetValue(Section,Key2,C:\Test\test.ini,Data for Key2)
+	Ini_GetValue(Section,Key1,C:\Test\test.ini,value1)
+	Ini_GetValue(Section,Key2,C:\Test\test.ini,value2)
+
+	Message(Value1 is **<Value1>**)
+	Message(Vlaue2 is **<Value2>**)

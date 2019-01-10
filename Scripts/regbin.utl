@@ -1,0 +1,32 @@
+//
+// Test The Registry Functions
+//
+	Reg_Add(HKCU,MIKE,TextValue,REG_SZ,My name is .:)
+	Reg_GetValue(HKCU,MIKE,TextValue,RegData)
+	Message(Registry data for HKCU\MIKE(TextValue) = <RegData>)
+
+	Reg_Append(HKCU,MIKE,TextValue,REG_SZ," Mr. Happy")
+	Reg_GetValue(HKCU,MIKE,TextValue,RegData)
+	Message(Registry data for HKCU\MIKE(TextValue) = <RegData>)
+
+	Reg_PrePend(HKCU,MIKE,TextValue,REG_SZ,"Question1 ")
+	Reg_GetValue(HKCU,MIKE,TextValue,RegData)
+	Message(Registry data for HKCU\MIKE(TextValue) = <RegData>)
+
+	Reg_RemoveString(HKCU,MIKE,TextValue,REG_SZ,"Question1 ")
+	Reg_GetValue(HKCU,MIKE,TextValue,RegData)
+	Message(Registry data for HKCU\MIKE(TextValue) = <RegData>)
+
+	Reg_DeleteValue(HKCU,MIKE,TextValue)
+	Reg_GetValue(HKCU,MIKE,TextValue,RegData)
+	Message(Registry data for HKCU\MIKE(TextValue) = <RegData>)
+
+	Reg_Upd(HKCU,MIKE,HEXVAL,REG_BINARY,01fa32bc)
+
+	Reg_Upd(HKCU,MIKE,VALUE2,REG_DWORD,123)
+
+	// Use the tilda to seperate the strings
+	Reg_Upd(HKCU,MIKE,Value7,REG_MULTI_SZ,String 1`String 2`String 3)
+
+	Reg_DeleteKey(HKCU,MIKE)
+	Message(Key HKCU should be Deleted)

@@ -1,0 +1,27 @@
+//
+// Install for the AMD Admin
+//	
+	String_Copy(InstDir,C:\AMD);					// Set the Install Directory
+	Comp=Get_ComputerName()						// Get the System Name
+	SetVdfValue(BASE,NAME,<Comp>)					// Set it into the BASE.VDF
+	SetVdfValue(BASE,Version,AMD Admin 1.0)				// Set out Version
+	SetVdfValue(BASE,WIN_DIR,Get_WindowsDir())			// Windows Directory
+	SetVdfValue(BASE,SYS_DIR,Get_SystemDir())			// Windows System
+	SetVdfValue(BASE,AMD,<InstDir>\)				// Our Base Dir
+	SetVdfValue(BASE,AMD_Scripts,<InstDir>\Scripts\)		// Where scripts go
+	SetVdfValue(BASE,AMD_VAR,<InstDir>\Var\)			// Where VDF files go
+	SetVdfValue(BASE,AMD_SCHED,<Instdir>\Schedule\)			// Where schedules go
+	SetVdfValue(BASE,AMD_STREAM,<Instdir>\Stream\)			// Where Streams go
+	SetVdfValue(BASE,AMD_LIST,<InstDir>\List\)			// Where Machine lists go
+	SetVdfValue(BASE,AMD_DATA,<InstDir>\Data\);			// Default data dir
+
+	SaveVdf(BASE)							// Save it away
+	//
+	// Install the NT TCP/IP Service
+	//
+	Create32(<instdir>\AMDCFG /BATCH,SW_HIDE,WAIT,<InstDir>);	// Base AMD Condifguration
+	Create32(<instdir>\AMDSRVLS -INSTALL,SW_HIDE,WAIT,<InstDir>);	// Execute it please
+	Create32(<instdir>\AMDSRVLS -START,SW_HIDE,WAIT,<InstDir>);	// Start the network listener
+	Create32(<instdir>\AMDSCHED ,SW_HIDE,ASYNC,<InstDir>);		// Start the scheduler
+
+

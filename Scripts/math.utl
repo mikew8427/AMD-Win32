@@ -1,0 +1,21 @@
+//
+// Test Math Functions
+//
+	String_Copy(Var1,1)
+	String_Copy(Var2,2)
+
+	ans=ADD(<Var1>,<Var2>)
+	Message(Should be 3 and is..: <ans>)
+
+	ans=SUB(<Var2>,<Var1>)
+	Message(Should be 1 and is..: <ans>)
+
+	ans=MULT(<Var2>,3)
+	Message(Should be 6 and is..: <ans>)
+	
+	ans=DIV(<ans>,<Var2>)
+	Message(Should be 3 and is..: <ans>)
+
+	and=ADD( ADD(<Var1>,<Var2>) , ADD(<Var1>,<Var2>) )
+	Message(Should be 6 and is..: <ans>)
+

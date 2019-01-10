@@ -1,0 +1,16 @@
+//
+// Test the Local_Variable Functions
+//
+
+	Local_Define(Buffer,24)				// Explicit Definition
+	STRING_Copy(Buffer,My Computer Name is.:)	// Place some data here
+	Comp=Get_ComputerName()				// Defined by first usage
+	Message(<Buffer> <Comp>)			// Display a Message
+	Call(MyProc,Buffer,Comp)			// Call a Prcedure
+	Message(<Buffer> <Comp>)			// Display same old message
+
+Proc:MyProc
+	String_Copy(Buffer,New Display Info....:)	// Variable updated
+	Message(<Buffer> <Comp>)			// Display Message
+	Local_Drop(Buffer)				// Droped
+EndP

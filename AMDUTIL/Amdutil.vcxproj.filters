@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6ded5e9c-b55e-480d-9b7b-4001d7ed6718}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat;for;f90</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{67ed4f00-7527-4278-a3b5-dfcafa31cec4}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;fi;fd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{843c93e4-7691-420c-9017-6750e0d0b687}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Admtrie.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AMDNET.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CRC.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Jdate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Nettcp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Routine.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SLST.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="W32reg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="W32trace.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WINSETUP.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Winutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="admtrie.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Amdio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="amdioutl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Amdnet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Jdate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Nettcp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="parmblk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="routine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="slst.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="winsetup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="winutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Schglobal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\W32trace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

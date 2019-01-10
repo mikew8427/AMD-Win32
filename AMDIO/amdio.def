@@ -1,0 +1,38 @@
+LIBRARY   AMDIO
+
+
+
+EXPORTS
+   	MsgtoScreen    		@2
+	InitAMD				@3
+	AllocAMD			@4
+	CreateAMD			@5
+	FlushAMD			@6
+	CloseAMD			@8
+	OpenAMD				@9
+	AddAMD				@10
+	AMDExit				@11
+	UnloadAMD			@12
+	SortAMD				@13
+	Select				@14
+	Find				@15
+	FindSorted			@16
+	AddLiADM			@17
+	UpdateAMD			@18
+	AddItemAMD			@19
+	DeleteItemAMD		@20
+	GetValueAMD			@21
+	GetIndexOfName		@22
+	BuildItemList		@23
+	CleanupAMDFile		@24
+	CopyAMD				@25
+	RemoveAMD			@26
+	CopyItemsAMD		@27
+	GetSortedItemAMD	@28
+	FindItem			@29
+	BuildLineEntry		@30
+	AllocLiAMD			@31
+	GetSortedLiAMD		@32
+	SortAMDA			@33
+
+

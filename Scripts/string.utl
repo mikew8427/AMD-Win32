@@ -1,0 +1,33 @@
+//
+// Test The String Functions
+//
+
+	String_Copy(NewVal,"    New String Defined     ")
+	Message(NewVal looks like ..: *<NewVal>*)
+	String_Trim(NewVal,Right)
+	Message(NewVal looks like ..: *<NewVal>*)
+	String_Trim(NewVal,Left)
+	Message(NewVal looks like ..: *<NewVal>*)
+	String_Copy(NewVal,"    A Second New String Defined     ")
+	Message(NewVal looks like ..: *<NewVal>*)
+	String_Trim(NewVal,ALL)
+	Message(NewVal looks like ..: *<NewVal>*)
+	Len=String_len(NewVal)
+	Message(Length of NewVal is..: <Len>)
+	len=String_Concat(Newval," With some Brandy New data ")
+	Message(Length of NewVal is..: <Len>)
+	Message(NewVal looks like....: <NewVal>)
+	pos=String_Find(NewVal,"Brandy")
+	Message(The Word Bandy start in position: <pos>)
+	String_Substr(APart,<NewVal>,pos,6)
+	Message(Value for Apart is..: <Apart>)
+
+	Fname=BuildFileName(C:\Test\data\ , \NewDir\Test.txt)
+	Message(Complete file Name is..: <FName>)
+
+	
+
+
+
+
+

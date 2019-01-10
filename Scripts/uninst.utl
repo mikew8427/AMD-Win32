@@ -1,0 +1,6 @@
+//
+// This file is run before the removal of the files
+//
+	Create32(c:\AMD\amdproc KILL AMDSCHED,SW_HIDE,WAIT,C:\amd);
+	Create32(c:\amd\amdsrvls -remove,SW_HIDE,WAIT,c:\amd);	
+	

@@ -1,0 +1,33 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: amdntclr - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP10.tmp" with contents
+[
+/nologo /ML /W3 /GX /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /Fp".\Release/Amdntclr.pch" /YX /Fo".\Release/" /Fd".\Release/" /FD /c 
+"D:\AMD_Client\AMDNTCLR\amdntclr.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP10.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:no /pdb:".\Release/amdntclr.pdb" /machine:I386 /out:"C:\Test\amdntclr.exe" 
+.\Release\amdntclr.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11.tmp"
+<h3>Output Window</h3>
+Compiling...
+amdntclr.c
+D:\AMD_Client\AMDNTCLR\amdntclr.c(323) : warning C4715: 'SetEventType' : not all control paths return a value
+Linking...
+
+
+
+<h3>Results</h3>
+amdntclr.exe - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

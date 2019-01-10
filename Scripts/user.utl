@@ -1,0 +1,13 @@
+//
+// Test The User Interface functions
+//
+
+:Loop
+	Message(I will ask you a Question now)
+	ans=AskUser(DO you Whish to Continue?)
+	if (RESULT == YES) then do 
+		goto loop
+	end;
+	Message(Ending Test)
+
+	

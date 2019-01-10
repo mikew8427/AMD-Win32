@@ -1,0 +1,28 @@
+//
+// Test System Variables
+//
+
+	LogMsg("This is a Message for %s",You and only You)
+	LogMsg("Your Current Directory is....: %s",Get_CurrentDir())
+	Set_CurrentDir(C:\Windows)
+	LogMsg("Your Current Directory is....: %s",Get_CurrentDir())
+	LogMsg("Your Computer Name is........: %s",Get_ComputerName())
+	LogMsg("Your Windows Directory is....: %s",Get_WindowsDir())
+	LogMsg("Your System Directory is.....: %s",Get_SystemDir())
+	LogMsg("Your Current Directory is....: %s",Get_CurrentDir())
+
+	LogMsg("Total Space on Drive C:\ is..: %s",Get_TotalSpace(C:\))
+	LogMsg("Free Space on Drive C:\ is ..: %s",Get_FreeSpace(C:\))
+
+	CreateLink(c:\windows\desktop\My New Link.lnk,<instdir>\AMDSCHED.EXE,AMD Viewer,<InstDir>, ,SW_SHOW);
+
+	Map_Drive(\\QSDOM1\c$,V:,"")
+	Message(Check to see if Drive V is mapped)
+	Remove_Drive(V:)
+
+
+
+
+
+
+	

@@ -1,0 +1,38 @@
+//
+// Test The AMD Functions
+// 
+
+	AmdH=AMD_ADD(c:\test\allexe.csv)			// Add an Amd Please
+	AMD_Open(Amdh);						// Open up the file
+	AMD_Unload(AmdH)					// Unload it please
+	AMD_Close(AmdH)						// Close the file
+	IdxName=Amd_GetIndexofName(AMdh,"File Name");		// Get index of the name
+	IdxDir=Amd_GetIndexOfName(AmdH,"File Directory");	// Get the index of this one
+	AMD_AddItem(Amdh,"LastDate")				// Add a new field
+	String_Copy(Record,0);					// Init a value
+	While(Amd_GetRecord(Amdh,<Record>) == 0)		// Load record
+		Fname=Amd_GetValue(Amdh,IdxName);		// Copy out data
+		Fdir=Amd_GetValue(Amdh,IdxDir);			// Copy out data
+		fn=BuildFileName(<Fdir>,<fname>)		// build a File name
+		Message(The file for record <Record> is <fn>)	// Tell the world
+		AMD_SetValue(Amdh,"LastDate","1999/10/19");	// update this value
+		Record=Add(<Record>,1)				// Add 1 to record count
+	End							// Edn while
+	Amd_Flush(Amdh)						// Write to disk
+	Message(Stop and look and the file)
+//
+//	Now do it the sorted way
+//
+	Amd_Sort(Amdh,"File Name")				// Sort By Name
+	String_Copy(Record,0)
+	While(Amd_GetSortedItem(Amdh,<Record>) == 0)
+		Fname=Amd_GetValue(Amdh,IdxName);		// Copy out data
+		Fdir=Amd_GetValue(Amdh,IdxDir);			// Copy out data
+		fn=BuildFileName(<Fdir>,<fname>)		// build a File name
+		Message(The file for record <Record> is <fn>)	// Tell the world
+		AMD_SetValue(Amdh,"LastDate","1999/08/28");	// update this value
+		Record=Add(<Record>,1)				// Add 1 to record count
+	End
+	Amd_DeleteItem(Amdh,"LastDate");			// Remove the item
+	Amd_Flush(Amdh)						// Write to disk
+	Amd_Remove(Amdh)

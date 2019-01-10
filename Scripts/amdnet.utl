@@ -1,0 +1,12 @@
+//
+// Test the AMD Network Functions
+//
+
+	Start_AMDSession(204.7.83.1)						// Contact this Machine
+	Send_AMDRequest(EXEC,C:\windows\notepad.exe,"<AMD>AMDDRV.CSV","<AMD>")	// Transfer EXE to <AMD> dir,execute and wait
+	Send_AMDRequest(START,notepad.exe,"<AMD>AMDDRV.CSV","<AMD>")		// Exec from a specific location start only
+	Send_AMDRequest(EXEO,notepad.exe,"<AMD>AMDDRV.CSV");			// Execute Only Command and wait
+	Send_AMDRequest(DATA,C:\TEST\AMDNET.UTL,1999 08 28 09 45 00,"<AMD>"); 	// Send A File Set its date and time
+	Send_AMDRequest(GETF,"<AMD>postnt.utl","C:\Test\<Name>\postnt.utl","")	// Get A file Getf,From,To
+	Send_AMDRequest(STAGE,"C:\test\amdproc95.exe","","<AMD>")		// Stage File for Reboot
+	Stop_AMDSession()

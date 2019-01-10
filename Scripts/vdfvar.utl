@@ -1,0 +1,9 @@
+//
+// Test VDF Variable Interface
+//
+	String_Copy(MainDir,<Base.AMD>)		// Gets the value of BASE.VDF var AMD
+	Message( The Main Directory for AMD is..: <MainDir>)
+	LoadVDF(APP)				// Unload the vdf into a script please
+	Message(The APPNAME variable is <APPNAME>);
+	SetVDFValue(APP,APPDATE,01/01/2000)	
+	SaveVDF(APP)

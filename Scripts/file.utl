@@ -1,0 +1,72 @@
+//
+// Test File System Functions
+//
+	Create_Dir(C:\Test)
+	String_Copy(TstFile,C:\Test\File.utl)
+	If (File_Exists(<TstFile>) == 0) then Message(File.utl is here!!)
+	end
+	Date=File_GetDate(<TstFile>)
+	Time=FIle_GetTime(<TstFile>)
+	Size=File_GetSize(<TstFile>)
+	Attr=File_GetAttr(<TstFile>)
+	Message(Stats for File.UTL are..: <Date> <Time> <Size> <Attr>)
+
+	File_SetDateTime(<TstFile>,1999 08 28 09 45 00)
+	Date=File_GetDate(<TstFile>)
+	Time=FIle_GetTime(<TstFile>)
+	Message(Stats for File.UTL are..: <Date> <Time> <Size> <Attr>)
+
+	File_SetAttr(<TstFile>,R)
+	Attr=File_GetAttr(<TstFile>)
+	Message(Stats for File.UTL are..: <Date> <Time> <Size> <Attr>)
+	File_SetAttr(<TstFile>,X)		// Clears all Attributes
+//
+//	File Data Access Tests
+//
+//
+//	Generate some test Data
+//
+	FHW=File_Open(C:\Test\Data.TXT,w,Text)
+	if(FHW == 8) then do
+		Message(Unable to Open output File)
+		ExitProcess(8);
+	end
+	File_Write(FHW,This is the Data you will see in the next Step)
+	File_Write(FHW,Write as many lines as you like)
+	File_Close(FHW)
+	Message(Data.Txt sould be created)
+	//
+	// Open it up and read it back
+	//
+	FH1=File_Open(c:\Test\Data.TXT,r,TEXT);	// Open FIle as Text
+	if(FH1 == 8) then do
+		Message(Unable to Open Test File);
+		exitprocess(8);
+	end
+
+	//
+	// Now Read In the entire File 
+	//
+	String_Copy(cnt,1)
+	While(File_Read(FH1,LstBuf,512) > 0)
+		Message(Line <cnt> of file <TstFile> is.: <LstBuf>)
+		cnt=Add(<cnt>,1)
+		Local_Drop(LstBuf)
+	End
+	File_Close(FH1)
+
+	File_Remove(C:\Test\Data.Txt)
+
+	If (File_Exists(C:\Test\Data.txt) == 0) then Message(File Data.Txt is here!!)
+	else Message(File Data.Txt has been removed)
+	end
+//
+//	Create Directory
+//
+	Create_Dir(C:\NewTest\Newdir\Level3)
+	Message(See if C:\NewTest\NewDir\Level3 was created)
+	Remove_dir(C:\NewTest\Newdir\Level3)
+	Message(Level3 should be gone)
+	Remove_Dir(C:\NewTest\NewDir)
+	Message(Now NewDir)
+	Remove_Dir(C:\NewTest)

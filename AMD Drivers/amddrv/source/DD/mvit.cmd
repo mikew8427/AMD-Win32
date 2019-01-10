@@ -1,0 +1,1 @@
+copy D:\ntddk\lib\i386\amddrv.sys c:\test\*.*

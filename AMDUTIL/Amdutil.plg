@@ -1,0 +1,77 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: AMDUTIL - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP40.tmp" with contents
+[
+/nologo /ML /W3 /GX /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /Fp".\Release/Amdutil.pch" /YX /Fo".\Release/" /Fd".\Release/" /FD /c 
+"D:\AMD_Client\AMDUTIL\Admtrie.c"
+"D:\AMD_Client\AMDUTIL\AMDNET.C"
+"D:\AMD_Client\AMDUTIL\CRC.C"
+"D:\AMD_Client\AMDUTIL\Jdate.c"
+"D:\AMD_Client\AMDUTIL\Nettcp.c"
+"D:\AMD_Client\AMDUTIL\Routine.c"
+"D:\AMD_Client\AMDUTIL\SLST.C"
+"D:\AMD_Client\AMDUTIL\W32reg.c"
+"D:\AMD_Client\AMDUTIL\W32trace.c"
+"D:\AMD_Client\AMDUTIL\WINSETUP.C"
+"D:\AMD_Client\AMDUTIL\Winutil.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP40.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP41.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib mpr.lib wsock32.lib amdio.lib lz32.lib /nologo /subsystem:windows /incremental:yes /pdb:".\Release/amdutil.pdb" /debug /machine:I386 /out:"c:\test\amdutil.exe" 
+.\Release\Admtrie.obj
+.\Release\AMDNET.OBJ
+.\Release\CRC.OBJ
+.\Release\Jdate.obj
+.\Release\Nettcp.obj
+.\Release\Routine.obj
+.\Release\SLST.OBJ
+.\Release\W32reg.obj
+.\Release\W32trace.obj
+.\Release\WINSETUP.OBJ
+.\Release\Winutil.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP41.tmp"
+<h3>Output Window</h3>
+Compiling...
+Admtrie.c
+AMDNET.C
+CRC.C
+Jdate.c
+Nettcp.c
+Routine.c
+D:\AMD_Client\AMDUTIL\Routine.c(1205) : warning C4018: '>' : signed/unsigned mismatch
+D:\AMD_Client\AMDUTIL\Routine.c(1211) : warning C4018: '>' : signed/unsigned mismatch
+D:\AMD_Client\AMDUTIL\Routine.c(1525) : warning C4101: 'f3' : unreferenced local variable
+D:\AMD_Client\AMDUTIL\Routine.c(1779) : warning C4047: 'function' : 'struct LineEntry ** ' differs in levels of indirection from 'struct LineEntry *'
+D:\AMD_Client\AMDUTIL\Routine.c(1779) : warning C4024: 'SortAMD' : different types for formal and actual parameter 3
+D:\AMD_Client\AMDUTIL\Routine.c(1795) : warning C4018: '>' : signed/unsigned mismatch
+D:\AMD_Client\AMDUTIL\Routine.c(1800) : warning C4047: 'function' : 'struct LineEntry ** ' differs in levels of indirection from 'struct LineEntry *'
+D:\AMD_Client\AMDUTIL\Routine.c(1800) : warning C4024: 'GetSortedItemAMD' : different types for formal and actual parameter 2
+D:\AMD_Client\AMDUTIL\Routine.c(1801) : warning C4047: 'function' : 'struct LineEntry ** ' differs in levels of indirection from 'struct LineEntry *'
+D:\AMD_Client\AMDUTIL\Routine.c(1801) : warning C4024: 'SetMasterLi' : different types for formal and actual parameter 2
+D:\AMD_Client\AMDUTIL\Routine.c(2034) : warning C4244: '=' : conversion from 'double ' to 'float ', possible loss of data
+SLST.C
+W32reg.c
+D:\AMD_Client\AMDUTIL\W32reg.c(296) : warning C4018: '<' : signed/unsigned mismatch
+W32trace.c
+D:\AMD_Client\AMDUTIL\W32reg.c(105) : warning C4700: local variable 'ret' used without having been initialized
+WINSETUP.C
+Winutil.c
+D:\AMD_Client\AMDUTIL\WINSETUP.C(53) : warning C4715: 'WinSetup' : not all control paths return a value
+D:\AMD_Client\AMDUTIL\Winutil.c(477) : warning C4018: '<' : signed/unsigned mismatch
+Linking...
+
+
+
+<h3>Results</h3>
+amdutil.exe - 0 error(s), 15 warning(s)
+</pre>
+</body>
+</html>

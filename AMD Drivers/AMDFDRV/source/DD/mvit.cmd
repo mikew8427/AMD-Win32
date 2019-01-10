@@ -1,0 +1,1 @@
+copy D:\ntddk\lib\i386\amdfdrv.sys c:\test\*.*
